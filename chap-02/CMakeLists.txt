@@ -8,8 +8,8 @@ add_executable(c2-4-rectangle
     4-rectangle/Rectangle.h
 )
 
-# add_executable(c2-5-polygon
-#     5-polygon/main.cpp
-#     5-polygon/Polygon.cpp
-#     5-polygon/Polygon.h
-# )
+add_executable(c2-5-polygon
+    5-polygon/main.cpp
+    5-polygon/Polygon.cpp
+    5-polygon/Polygon.h
+)
