@@ -19,7 +19,6 @@ public:
 
     Person& operator=(const Person& other)
     {
-        if (this != &other)
         {
             _name = other._name;
             _surname = other._surname;
@@ -29,9 +28,9 @@ public:
     }
 
 private:
-    std::string  _name;
-    std::string  _surname;
-    unsigned int _age = 0u;
+    std::string   _name;
+    std::string   _surname;
+    unsigned int  _age = 0u;
 };
 
 std::ostream& operator<<(std::ostream& stream, const Person& person){
