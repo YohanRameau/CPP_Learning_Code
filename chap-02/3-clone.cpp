@@ -19,6 +19,7 @@ public:
 
     Person& operator=(const Person& other)
     {
+        if(this != &other)
         {
             _name = other._name;
             _surname = other._surname;
