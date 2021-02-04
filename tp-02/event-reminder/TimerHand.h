@@ -29,11 +29,21 @@ class Clock
 {
 private:
     std::vector<Event> _events = std::vector<Event>();
-    MinuteHand         _min_hand;
-    SecondHand         _sec_hand;
+    MinuteHand&         _min_hand;
+    SecondHand        _sec_hand;
 public:
     void tick();
+    Clock();
     Clock( MinuteHand&);
+    Clock(MinuteHand, SecondHand);
     void add_events(const Event&);
      
 };
+
+int main(int argc, char const *argv[])
+{
+    MinuteHand m;
+    SecondHand secondHand{m};
+
+    return 0;
+}

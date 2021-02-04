@@ -50,11 +50,18 @@ void delete_events(std::vector<Event> events, int current_min, int current_sec)
 void Clock::tick()
 {
     delete_events(_events ,_min_hand.get_minutes(), _sec_hand.get_seconds());
-    _sec_hand.advance();
-    
-    
+    _sec_hand.advance();    
 }
+
 void Clock::add_events(const Event& event)
 {
     _events.emplace_back(event);
+}
+
+int main(int argc, char const *argv[])
+{
+    MinuteHand m;
+    SecondHand h;
+    Clock c{m};
+    return 0;
 }

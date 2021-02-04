@@ -16,8 +16,8 @@ public:
     {}
     bool notify_time(int current_min, int current_sec)
     {
-        auto min = _notif_time.first;
-        auto sec = _notif_time.second;
+        int min = _notif_time.first;
+        int sec = _notif_time.second;
         if(min == current_min && sec == current_sec)
         {
             std::cout << _message << std::endl;
