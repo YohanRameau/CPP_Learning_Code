@@ -2,9 +2,9 @@
 
 // Switch values to 1 to enable the corresponding test.
 
-#define ENABLE_T1 0
-#define ENABLE_T2 0
-#define ENABLE_T3 0
+#define ENABLE_T1 1
+#define ENABLE_T2 1
+#define ENABLE_T3 1
 #define ENABLE_T4 0
 #define ENABLE_T5 0
 #define ENABLE_T6 0

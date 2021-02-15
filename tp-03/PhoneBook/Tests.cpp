@@ -1,7 +1,7 @@
 #undef NDEBUG
 
 #include "Tests.h"
-
+#include "PhoneBook.h"
 #include <cassert>
 #include <iostream>
 #include <sstream>
@@ -12,12 +12,12 @@ int main()
     t1_phone_number_validity();
     t2_person_content();
     t3_persons_are_comparable();
-    t4_phone_book_insertions_and_access();
-    t5_phone_book_collisions();
-    t6_phone_book_makes_copies();
-    t7_phone_number_output();
-    t8_phone_book_is_iterable();
-    t9_phone_book_output();
+    //t4_phone_book_insertions_and_access();
+    //t5_phone_book_collisions();
+    //t6_phone_book_makes_copies();
+    //t7_phone_number_output();
+    //t8_phone_book_is_iterable();
+    //t9_phone_book_output();
 
     return 0;
 }
@@ -50,7 +50,6 @@ void t2_person_content()
 {
     // A Person has a first name, a surname and a PhoneNumber.
     // The PhoneNumber can be modified.
-
 #if ENABLE_T2
     Person mickey { "Mickey", "Mouse" };
     assert(mickey.get_full_name() == "Mickey Mouse");

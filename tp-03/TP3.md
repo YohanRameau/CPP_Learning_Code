@@ -6,9 +6,9 @@
 
 | conteneur    | insertion (en tête / en fin) | suppression (en tête / en fin) | accès |
 |--------------|-----------|----------|-----------|
-| array        | N/A       | N/A      |           |
-| vector       |           |          |           |
-| deque        |           |          |           |
+| array        | N/A       | N/A      | O(1)      |
+| vector       | O(n)/O(1) | O(n)/O(1)| O(1)      |
+| deque        | O(1)/O(1) | O(1)/O(1)|           |
 | forward_list |           |          |           |
 | list         |           |          |           |
 | set          |           |          |           |
