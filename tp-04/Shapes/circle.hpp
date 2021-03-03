@@ -13,6 +13,11 @@ public:
 	Circle(const Point& _center, const float _radius):
 		center{_center}, radius{_radius}
 	{}
+
+	std::ostream &print(std::ostream &os) const override
+	{
+		return os << "circle : " << center << " & " << radius << std::endl;
+	}
 	
 	// intersection of 2 circles is the intersection of one cicle with the line L "in the middle" such that
 	// L intersects the line between the centers of the circles at distances d1 from circle 1 and d2 from circle 2 where
@@ -21,7 +26,7 @@ public:
 	// d1^2 = r1^2 - r2^2 + (dc - d1)^2, that is
 	// (d1 + (dc - d1))(d1 - (dc - d1)) = r1^2 - r2^2, that is
 	// 2d1 = (r1^2 - r2^2) / dc + dc
-	PointContainer intersect(const Circle& other) const {
+	virtual PointContainer intersect(const Circle& other) const {
 		PointContainer result;
 		const Point center_to_center = other.center - center;
 		const float dc = center_to_center.dist_to_0();
@@ -60,6 +65,10 @@ public:
 			result.emplace_back(P);
 		}
 		return result;
+	}
+
+	PointContainer intersect(const Shape& other) const override {
+		return (*&other).intersect(*this);
 	}
 
 	~Circle() = default;

@@ -16,6 +16,16 @@ public:
 		 return last - first;
 	}
 
+	std::ostream& print(std::ostream& os) const override
+	{
+		return os << "line through " << first << " & " << last ;
+	}
+
+	std::pair<const Point&,const Point&> get_points() const
+	{
+		return {first, last};
+	}
+
 	// intersecting a line with a line is simple: just solve (for scalars a & b) the equation system:
 	//  a * direction1 + offset1 = b * direction2 + offset2
 	// that is:
@@ -38,6 +48,11 @@ public:
 			return {dir2 * b + ln.first};
 		}
 		return {};
+	}
+
+	PointContainer intersect(const Shape& other) const override
+	{
+		return other.intersect(*this);
 	}
 
 	~Line() = default;

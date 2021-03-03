@@ -22,6 +22,11 @@ public:
 		return _position;
 	}
 
+	const std::string get_name() const
+	{
+		return _name;
+	}
+
 	void set_position(int position)
 	{
 		_position = position;
